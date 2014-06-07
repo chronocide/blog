@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for blog_post in posts %}
+  <div class="blog-post">
+    <div class="blog-post-header">
+      <div class="blog-post-subject">
+         {{blog_post.subject}}
+      </div>
+      <div class="blog-post-created">
+        {id: {{blog_post.key().id()}}, created: {{blog_post.created}}}
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+      <div class="blog-post-content">
+        {{blog_post.content}}
+      </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
